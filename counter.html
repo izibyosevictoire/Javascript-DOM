@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body onload="countDown()">
+    <div class="h-[350px] w-[300px] bg-black ">
+        <h1 class="flex px-20 py-5 justify-center text-white">USE COUNTDOWN</h1>
+        <span class=" px-20 py-10 flex justify-center ">
+                <p id="counter" class="text-yellow-700">10</p>
+               <div class="increments h-40 w-20  text-yellow-600 flex justify-between gap-5">
+                <button onclick="add()">+5s</button>
+                <button onclick="addTen() ">+10s</button>
+                <button onclick="addFifteen()">+15s</button>
+             </div>
+        </span>
+    </div>
+   
+
+    <script>
+        function add() {
+            let A = document.getElementById("counter").innerHTML
+            console.log(A)
+            document.getElementById("counter").innerHTML = parseInt(A) + 5;
+        }
+        function addTen() {
+            let B = document.getElementById("counter").innerHTML
+            document.getElementById("counter").innerHTML = parseInt(B) + 10;
+        }
+        function addFifteen() {
+            let C = document.getElementById("counter").innerHTML
+            document.getElementById("counter").innerHTML = parseInt(C) + 15;
+        }
+        function countDown() {
+            const count = document.querySelector('#counter')
+            const interval = setInterval(()=> {
+                if(count.textContent === '0'){
+                    clearInterval(interval)
+                    document.querySelector('.increments').classList.add('hidden')
+                } else {
+                    count.textContent = parseInt(count.textContent) - 1
+                }
+            },1000)
+            return interval
+        }
+        
+    </script>
+</body>
+
+</html>
