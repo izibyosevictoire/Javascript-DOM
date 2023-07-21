@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="grid grid-cols-4 gap-40 h-screen">
+        <div class=" px-5 py-28 gap-5">
+            <input type="text" placeholder="Enter your Task" class="border-black  border rounded h-20 " id="input" />
+            <br>
+            <button class="border bg-slate-300 hover:bg-sky-500 w-[80px] h-16 rounded" id="button">Add item</button>
+        </div>
+        <ul id="todo" class="col-span-2 ">
+            <h1 class="px-20 py-5 flex justify-center font-weight: 800 text-2xl font-bold">TODO List</h1>
+            <div class=" container flex ">
+
+            </div>
+        </ul>
+
+    </div>
+    <script>
+        const input = document.getElementById('input')
+        const button = document.getElementById('button')
+        const todos = document.getElementById('todo')
+        // const task = `
+        //    <input type="checkbox" id="scales" name="scales">
+        //    <label for="scales">Scales</label>
+        //    `
+        // const = task ``
+        //    ${input.value}
+
+        button.addEventListener('click', (e) => {
+            e.preventDefault()
+            if (input.value === '') {
+
+                alert('please write something')
+                return
+            }
+            let div = document.createElement('div')
+            div.classList.add('container')
+            let li = document.createElement('li')
+            let p = document.createElement('p')
+            let del = document.createElement('button')
+            del.innerHTML = "remove"
+            li.appendChild(p)
+            p.innerHTML = input.value;
+
+            div.appendChild(li)
+            div.appendChild(del)
+            input.value = ''
+            todos.appendChild(div)
+
+            del.addEventListener('click', () => {
+
+                todos.removeChild(div)
+
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>
