@@ -27,12 +27,13 @@
         const input = document.getElementById('input')
         const button = document.getElementById('button')
         const todos = document.getElementById('todo')
-        // const task = `
-        //    <input type="checkbox" id="scales" name="scales">
-        //    <label for="scales">Scales</label>
-        //    `
-        // const = task ``
-        //    ${input.value}
+        const task = `
+           <div class="flex">
+           <input type="checkbox" id="scales" name="scales">
+           <label for="scales">${input.value}</label>
+           <button class="border bg-slate-300 hover:bg-sky-500 w-[80px] h-16 rounded">Remove</button>
+           </div>
+           `
 
         button.addEventListener('click', (e) => {
             e.preventDefault()
@@ -43,6 +44,7 @@
             }
             let div = document.createElement('div')
             div.classList.add('container')
+
             let li = document.createElement('li')
             let p = document.createElement('p')
             let del = document.createElement('button')
