@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular primes Finder</title>
+    <script src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+    <div class="flex justify-center px-10 py-10 gap-10">
+        <label for="numberInput" class="text-white">Enter a number:</label>
+        <input type="number" id="numberInput" min="100" max="100000" required class="border border-black">
+        <button onclick="findCircularPrimes()" class="rounded text-white bg-yellow-950 h-[40px] w-[60px]"> Check </button>
+        
+    </div>
+    <div id="result" class="text-white flex justify-center"></div>
+</body>
+
+</html>
